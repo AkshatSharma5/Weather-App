@@ -18,7 +18,7 @@ const Weather = ({ city,isDayHandle }) => {
   useEffect(() => {
     const fetchWeather = async () => {
       const apiKey = "40f03e2e9a2541c6981214138242003";
-      const apiUrl = `http://api.weatherapi.com/v1/current.json?key=40f03e2e9a2541c6981214138242003&q=${city}&aqi=no`;
+      const apiUrl = `https://api.weatherapi.com/v1/current.json?key=40f03e2e9a2541c6981214138242003&q=${city}&aqi=no`;
 
       try {
         const response = await fetch(apiUrl);
