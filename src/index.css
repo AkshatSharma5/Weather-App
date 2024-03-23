@@ -10,8 +10,10 @@
 
 
 
-
-
+/* //overflow added */
+*{
+  overflow: hidden
+}
 
 
 
