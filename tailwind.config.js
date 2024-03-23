@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       screens: {
-        'xs': '475px',
-        'xxs': '380px',
+        'xs': '460px',
+        'xxs': '200px',
       },
       colors: {
         prim: "#2edce0",

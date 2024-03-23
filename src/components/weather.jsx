@@ -205,22 +205,22 @@ const Weather = ({ city,isDayHandle }) => {
     /*
     md:grid-cols-1 md:grid-rows-5 xs:grid-cols-2 xs:grid-rows-5 sm:grid-cols-1 sm:grid-rows-5 lg:grid-cols-2 lg:grid-rows-3 xxs:grid-rows-5 xxs:grid-cols-1 xs:text-base sm:text-xs xxs:text-xs md:text-xl
     */ 
-    <div className="grid grid-cols-2 grid-rows-3  font-secon ml-[32vw] mt-11 mr-4 ">
+    <div className="grid xs:grid-cols-2 grid-rows-3 grid-cols-1 font-secon ml-[32vw] mt-11 mr-4 ">
       {meas.map((item, i) => (
         <div
           key={i}
           className={`text-white uppercase cursor-pointer p-2.5 bg-gradient-to-tr
-           ${i === 0? weatherData.current[item.value] >= 22? `${`${hot} hover:from-green-500 hover:to-blue-500`}`: cold: ""} hover:from-pink-600 hover:to-yellow-600 bg-darken border-2 m-2 rounded-lg mt-5 py-4 text-4xl 
-           ${i === 0 ? "col-span-2" : ""} `}
+           ${i === 0? weatherData.current[item.value] >= 22? `${`${hot} hover:from-green-500 hover:to-blue-500`}`: cold: ""} hover:from-pink-600 hover:to-yellow-600 bg-darken border-2 m-2 rounded-lg mt-5 py-4 xl:text-4xl lg:text-3xl sm:text-2xl xs:text-xl text-lg
+           ${i === 0 ? "xl:col-span-2 col-span-1" : ""} `}
         >
           <span className={`${i == 0 ? "visible absolute top-[10vh] left-[75vw] text-base font-mainn font-bold": "hidden"}`}>
-            <span className="xs:hidden sm:hidden md:block lg:block md:text-white lg:text-white ">
+            <span className="xl:inline-block hidden md:text-white lg:text-white ">
               {weatherData.current[item.value] >= 22 ? "HOT" : "COLD"}
             </span>
           </span>
           {item.label}
           <div
-            className={`font-secon font-thin ${i == 1 ? `${(weatherData.current.condition.text.length<=8)?"text-4xl":"text-xl"}`:"text-5xl"}`}>
+            className={`font-secon font-thin ${i == 1 ? `${(weatherData.current.condition.text.length<=8)?"xl:text-4xl lg:text-3xl text-2xl":"text-xl"}`:"xl:text-5xl lg:text-3xl text-2xl"}`}>
             {i != 1? weatherData.current[item.value] : weatherData.current.condition.text}{" "}
             <span className="text-xl ">{i != 1 ? item.unit : ""}</span>
             <span className={`${i == 1 ? "visible" : "hidden"}`}>
@@ -228,7 +228,7 @@ const Weather = ({ city,isDayHandle }) => {
                 src={weatherData.current.condition.icon}
                 height={50}
                 width={50}
-                className="absolute top-[32.5vh] left[11.5vw] z-10 "
+                className="absolute hidden xl:block top-[32vh] left[11.5vw] z-10 "
               />
               
               
@@ -238,7 +238,7 @@ const Weather = ({ city,isDayHandle }) => {
       ))}
       
         
-      <div className="text-white w-[21vw] rounded-xl py-5  bg-darken font-official font-bold text-xl absolute top-[40vh] left-[3.2vw]">
+      <div className="text-white w-[32vw] xs:w-[21vw] rounded-xl py-5  bg-darken font-official font-bold text-lg sm:text-xl absolute top-[40vh] left-[3.2vw] sm:px-[5vw]">
         <span className="font-normal uppercase underline font-secon">
           Location:
         </span>{" "}
@@ -249,10 +249,10 @@ const Weather = ({ city,isDayHandle }) => {
           Last Updated:
         </span>{" "}
         <br />{" "}
-        <span className="font-secon font-light text-xl">
+        <span className="font-secon font-light text-lg sm:text-xl">
           {weatherData.current.last_updated}
         </span>
-        {(codee)!=null?<img className="absolute top-[3.8vh] left-[15vw] " src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${codee}.svg`} width="23" alt='Image 404'/>:''}
+        {(codee)!=null?<img className="absolute xl:top-[3.8vh] xl:left-[15vw] left-[17vw] top-[3.5vh] lg:inline-block hidden" src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${codee}.svg`} width="23" alt='Image 404'/>:''}
       </div>
       
     </div>
